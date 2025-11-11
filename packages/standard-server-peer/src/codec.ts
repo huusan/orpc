@@ -207,9 +207,9 @@ export function deserializeResponseMessage(message: BaseMessageFormat): DecodedR
   const payload = message.p as SerializedResponsePayload
 
   return [id, MessageType.RESPONSE, {
-    status: payload.s ?? 200,
-    headers: payload.h ?? {},
-    body: payload.b,
+    status: payload?.s ?? 200,
+    headers: payload?.h ?? {},
+    body: payload?.b,
   }]
 }
 
